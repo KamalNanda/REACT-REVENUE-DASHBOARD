@@ -5,6 +5,7 @@ import { FaWallet } from "react-icons/fa";
 import { AiOutlinePieChart } from "react-icons/ai";
 import Badge from "./Badge";
 import AvatarImage from "../assets/avatarImage.jpeg";
+import {Link} from 'react-router-dom';
 import { darkThemeColor } from "../utils";
 function Sidebar() {
   return (
@@ -16,21 +17,29 @@ function Sidebar() {
       </ProfileContainer>
       <LinksContainer>
         <Links>
-          <Link>
-            <RiHomeLine />
-            <h3>Dashboard</h3>
+          <Link to="/">
+            <LinkWrapper>
+              <RiHomeLine />
+              <h3>Dashboard</h3>
+            </LinkWrapper>
           </Link>
-          <Link>
-            <RiFileCopyLine />
-            <h3>Projects</h3>
+          <Link to="/projects">
+            <LinkWrapper>
+              <RiFileCopyLine />
+              <h3>Projects</h3>
+            </LinkWrapper>
           </Link>
-          <Link>
-            <FaWallet />
-            <h3>Invoices</h3>
+          <Link to="/invoices">
+            <LinkWrapper>
+              <FaWallet />
+              <h3>Invoices</h3>
+            </LinkWrapper>
           </Link>
-          <Link>
-            <AiOutlinePieChart />
-            <h3>Reports</h3>
+          <Link to="/reports">
+            <LinkWrapper>
+              <AiOutlinePieChart />
+              <h3>Reports</h3>
+            </LinkWrapper>
           </Link>
         </Links>
         <ContactContainer>
@@ -92,7 +101,7 @@ const Links = styled.ul`
   height: 60%;
 `;
 
-const Link = styled.li`
+const LinkWrapper = styled.li`
   margin-left: 25%;
   margin-bottom: 2rem;
   display: flex;

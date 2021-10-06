@@ -2,11 +2,25 @@ import "./App.css";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
+import {Switch,Route} from 'react-router-dom';
 function App() {
   return (
     <Container>
       <Sidebar />
-      <MainContent />
+      <Switch>
+        <Route path="/" exact>
+          <MainContent />
+        </Route>
+        <Route path="/projects">
+          <h1>PROJECTS</h1>
+        </Route>
+        <Route path="/invoices">
+          <h1>INVOICES</h1>
+        </Route>
+        <Route path="/reports">
+          <h1>REPORTS</h1>
+        </Route>
+      </Switch>
     </Container>
   );
 }
